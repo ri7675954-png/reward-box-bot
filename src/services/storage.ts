@@ -432,3 +432,24 @@ export function setAdminAuth(isAuth: boolean): void {
     // storage error
   }
 }
+export function loadUserState(): UserState {
+  if (typeof window === 'undefined') return getInitialUserState();
+  try {
+    const data = localStorage.getItem(USER_STATE_KEY);
+    if (!data) {
+      const initial = getInitialUserState();
+      saveUserState(initial);
+      return initial;
+    }
+    const parsed = JSON.parse(data) as UserState;
+    // FIX: পুরানো 0.46 থাকলে 0 করে দাও
+    if (parsed.balance === 0.46 || parsed.totalEarned === 4.06) {
+      const fresh = getInitialUserState();
+      saveUserState(fresh);
+      return fresh;
+    }
+    return parsed;
+  } catch {
+    return getInitialUserState();
+  }
+}
