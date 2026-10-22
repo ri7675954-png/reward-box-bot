@@ -1,0 +1,6 @@
+{
+  "name": "Reward Box Telegram Mini App",
+  "description": "Reward Box Telegram Mini App with verified Adsgram ads, tasks, referral rewards, and BEP-20 USDT withdrawals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
