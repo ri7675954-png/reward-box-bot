@@ -260,17 +260,17 @@ export function getInitialUserState(): UserState {
   const defaultName = tgUser?.first_name || 'Crypto Hunter';
   const defaultUsername = tgUser?.username ? `@${tgUser.username}` : '@hunter_88';
 
-  return {
-    balance: 0.46, // Initial user balance as requested: 0.46 USDT
-    totalEarned: 4.06,
-    adsWatchedToday: 4,
-    maxDailyAds: 15,
-    referralCode: 'RB-98421',
-    referredCount: 7,
-    referralEarnings: 0.70,
-    dailyStreak: 3,
-    lastDailyClaim: null,
-    completedTaskIds: ['tg_channel'],
+return {
+  balance: 0,
+  totalEarned: 0,
+  adsWatchedToday: 0,
+  maxDailyAds: 15,
+  referralCode: 'RB-98421',
+  referredCount: 0,
+  referralEarnings: 0,
+  dailyStreak: 0,
+  lastDailyClaim: null,
+  completedTaskIds: [],
     pendingTaskIds: [],
     userProfile: {
       name: defaultName,
